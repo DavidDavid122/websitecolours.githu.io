@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+:root {
+    --white: #fff;
+    --black: #24292d;
+    --nav-main: #4070f4;
+    --switchers-main: #0b3cc1;
+    --light-bg: #f0f8ff;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    height: 65px;
+    top: 0;
+    left: 0;
+    background: var(--nav-main);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 30px;
+}
+
+.navbar .nav-links {
+    display: flex;
+}
+
+.navbar a {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.navbar .nav-links li {
+    list-style: none;
+    margin: 0 8px;
+}
+
+.navbar .nav-links li a {
+    font-size: 17px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.navbar .nav-links li a:hover {
+    opacity: 1;
+}
+
+.navbar .appearance {
+    display: flex;
+    align-items: center;
+}
+
+.appearance .light-dark,
+.appearance .color-icon .icons {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color: var(--white);
+    background: var(--switchers-main);
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.appearance .color-icon .icons {
+    width: 70px;
+}
+
+.appearance .light-dark:hover,
+.appearance .color-icon .icons:hover {
+    opacity: 1;
+}
+
+.appearance .color-icon {
+    position: relative;
+}
+
+.appearance .color-icon .color-box {
+    position: absolute;
+    right: 0;
+    bottom: -133px;
+    min-height: 100px;
+    padding: 16px 20px 20px 20px;
+    border-radius: 5px;
+    background: var(--white);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.color-icon.open .color-box {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.color-icon.open .arrow {
+    transform: rotate(-180deg);
+}
+
+.color-icon .color-box::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 20px;
+    top: -10px;
+    border-radius: 50%;
+    background: var(--white);
+} 
+
+.color-icon .color-box h3 {
+    display: inline-block;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 500;
+    text-align: left;
+    white-space: nowrap;
+    margin-bottom: 10px;
+} 
+
+.color-box .color-switchers {
+    display: flex;
+} 
+
+.color-box .color-switchers .btn {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    margin: 0 5px;
+    background: #4070f4;
+    cursor: pointer;
+}
+
+.color-switchers .btn.active {
+    box-shadow: 0 0 0 2px var(--white),
+                0 0 0 4px #4070f4;
+}
+
+.color-switchers .btn.purple {
+    background: #70079c;
+}
+
+.color-switchers .btn.purple.active {
+    box-shadow: 0 0 0 2px var(--white),
+                0 0 0 4px #70079c;
+}
+
+.color-switchers .btn.green {
+    background: #00d415;
+}
+
+.color-switchers .btn.green.active {
+    box-shadow: 0 0 0 2px var(--white),
+                0 0 0 4px #00d415;
+}
+
+.home-content {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--light-bg);
+    padding: 0 60px;
+}
+
+.home-content h2 {
+    font-size: 40px;
+    color: var(--black);
+}
+
+.home-content h3 {
+    font-size: 35px;
+    color: var(--black);
+}
+
+.home-content h3 span.darkMode {
+    color: var(--black);
+}
+
+.home-content h3 span {
+    color: var(--nav-main);
+}
+
+.home-content p {
+    width: 40%;
+    font-size: 15px;
+    margin-bottom: 30px;
+    color: var(--black);
+}
+
+.home-content a {
+    font-size: 20px;
+    color: var(--white);
+    background: var(--nav-main);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+}
+
+.home-content a:hover {
+    background: var(--switchers-main);
+}
+
+.home-content a i {
+    transform: rotate(45deg);
+}
+
+@media (max-width: 1100px) {
+    .home-content p {
+        width: 70%;
+    }
+}
